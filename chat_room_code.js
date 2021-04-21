@@ -30,9 +30,16 @@ database.ref('messages' ).on('value', (snapshot) => {
     document.getElementById('showmsg').appendChild(x)
     console.log(t);
 });
+//use enter key to send msg
 
+document.addEventListener("keypress", function(e){
+  console.log(e.key);
+  if(e.key === "Enter"){
+    writeUserData();
+  }
+})
 //delete msg 
-
+/*
 database.ref("messages").on("child_removed", function (snapshot) {
     document.getElementById("showmsg-" + snapshot.key).innerHTML = "This message has been deleted";
   });
@@ -41,5 +48,5 @@ database.ref("messages").on("child_removed", function (snapshot) {
     var messageId = self.getAttribute("data-id");
     database.ref("messages").child(messageId).remove();
   }
-
+*/
 
