@@ -45,7 +45,7 @@ body #showmsg{
     width: 300px;
     height: 460px;
     background: rgba(0,0,0,0.4);
-    overflow-y: auto;
+    overflow-y: hidden;
     white-space: wrap;
     padding-left: 10px;
     
@@ -54,15 +54,11 @@ body #showmsg > .left{
     display: flex;
     align-items: center;
     position: relative;
-    /* left: 10px;
-    top: 65%; */
     width: 200px;
-    border: 1px solid black;
-    border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-body #showmsg > figure img{
+body #showmsg > .left img{
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -70,9 +66,17 @@ body #showmsg > figure img{
     margin-top: 15px;
     border: 2px solid gray;
 }
-body #showmsg > figure > p{
+body #showmsg > .left > p{
+    width: 200px;
+    position: relative;
+    color: #ffffff80;
     padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 10px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    top: 5px;
+    left: 10px;
 }
 
 body #showmsg > .right{
@@ -82,13 +86,11 @@ body #showmsg > .right{
     left: 90px;
     /*top: 85%; */
     width: 200px;
-    border: 1px solid black;
-    border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
     
 }
-body #showmsg > figure img{
+body #showmsg > .right img{
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -96,9 +98,29 @@ body #showmsg > figure img{
     margin-top: 10px;
     border: 2px solid gray;
 }
-body #showmsg > figure > p{
+body #showmsg > .right > p{
+    color: white;
     padding-top: 5px;
     padding-left: 10px;
+    position: relative;
+    background: linear-gradient(120deg, #4cc2c4, #f54785);
+    left: 10px;
+    width: 150px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+body #showmsg .timeParaLeft{
+    font-size: 10px;
+    position: relative;
+    left: 20px;
+    
+}
+body #showmsg .timeParaRight{
+    font-size: 10px;
+    position: relative;
+    left: 105px;
+    
 }
 body  #msg{
     position: relative;
