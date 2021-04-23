@@ -28,6 +28,15 @@ database.ref('messages').on('child_added', (snapshot) => {
       
   }*/
 
+    //set msg time
+  var time = new Date();
+  var hrs = time.getHours();
+  var min = time.getMinutes()
+
+console.log(`${hrs}${min}`)
+
+
+
   if (Name == msgtoshow.name) {
     var figure = document.createElement("figure");
     figure.setAttribute("class", "right");
@@ -42,6 +51,11 @@ database.ref('messages').on('child_added', (snapshot) => {
     //x.appendChild(figure) 
     document.getElementById('showmsg').appendChild(figure)
     figure.appendChild(x)
+    var pForTime = document.createElement("p");
+    var messageTime = document.createTextNode(`${hrs}:${min}`)
+    pForTime.appendChild(messageTime);
+    pForTime.setAttribute("class", "timeParaRight")
+    document.getElementById('showmsg').appendChild(pForTime);
     // document.getElementById('showmsg').appendChild(x);
 
   }
@@ -54,11 +68,16 @@ database.ref('messages').on('child_added', (snapshot) => {
     image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpdX6tPX96Zk00S47LcCYAdoFK8INeCElPeJrVDrh8phAGqUZP_g";
     figure.appendChild(image)
     var x = document.createElement("P");
-    var t = document.createTextNode(`${msgtoshow.message}`);
+    var t = document.createTextNode(`${msgtoshow.name}: ${msgtoshow.message}`);
     x.appendChild(t);
     //x.appendChild(figure) 
     document.getElementById('showmsg').appendChild(figure)
     figure.appendChild(x)
+    var pForTime = document.createElement("p");
+    var messageTime = document.createTextNode(`${hrs}:${min}`)
+    pForTime.appendChild(messageTime);
+    pForTime.setAttribute("class", "timeParaLeft")
+    document.getElementById('showmsg').appendChild(pForTime);
     // document.getElementById('showmsg').appendChild(x);
   }
 
@@ -99,6 +118,7 @@ document.getElementById("del").addEventListener("click", function () {
 
 
 
-  //
+
+ 
 
 
