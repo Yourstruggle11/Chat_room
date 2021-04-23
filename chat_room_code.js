@@ -12,6 +12,8 @@ function writeUserData() {
     message: msg,
     name: Name
   });
+  document.getElementById("msg").value = "";
+
 }
 
 
@@ -78,6 +80,7 @@ document.addEventListener("keypress", function (e) {
   //console.log(e.key);
   if (e.key === "Enter") {
     writeUserData();
+    document.getElementById("msg").value = "";
   }
 })
 //delete msg 
