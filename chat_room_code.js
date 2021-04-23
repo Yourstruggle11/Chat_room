@@ -5,48 +5,64 @@ console.log(database);
 
 //write data to data base
 let Name = prompt("Please enter your name", "")
+
 function writeUserData() {
     let msg = document.querySelector("#msg").value
-    database.ref('messages').push().set({
+    database.ref('messages/').push().set({
       message:  msg,
       name: Name
     });
-    return false;
   }
 
 
   //read data and give the input to the ui
 
-database.ref('messages' ).on('value', (snapshot) => {
+database.ref('messages' ).on('child_added', (snapshot) => {
   let msgtoshow = snapshot.val();
+  console.log(snapshot.key)
 
-   for(let key in msgtoshow){
+   /*for(let key in msgtoshow){
        var showthemsg = msgtoshow[key];
        
-   }
+   }*/
    var x = document.createElement("P");                        
-   var t = document.createTextNode(`${showthemsg.name}: ${showthemsg.message}`);    
+   var t = document.createTextNode(`${msgtoshow.name}: ${msgtoshow.message}`);    
     x.appendChild(t);                                           
     document.getElementById('showmsg').appendChild(x)
-    console.log(t);
+    var msgscroll = document.querySelector("#showmsg");
+
+
+    autoscrool();
+    function autoscrool() {
+      msgscroll.scrollTop = msgscroll.scrollHeight;
+    }
+   // console.log(t);
 });
 //use enter key to send msg
 
 document.addEventListener("keypress", function(e){
-  console.log(e.key);
+  //console.log(e.key);
   if(e.key === "Enter"){
     writeUserData();
   }
 })
 //delete msg 
-/*
-database.ref("messages").on("child_removed", function (snapshot) {
+
+/*database.ref("messages/").on("child_removed", function (snapshot) {
     document.getElementById("showmsg-" + snapshot.key).innerHTML = "This message has been deleted";
   });
 
   function deleteMessage(self) {
     var messageId = self.getAttribute("data-id");
     database.ref("messages").child(messageId).remove();
-  }
-*/
+  }*/
+  /*
+  document.getElementById("del").addEventListener("click", function(){
+    database.ref('messages/').remove()
+  })*/
+
+
+
+  //
+
 
