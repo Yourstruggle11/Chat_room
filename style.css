@@ -45,7 +45,7 @@ body #showmsg{
     width: 300px;
     height: 460px;
     background: rgba(0,0,0,0.4);
-    overflow-y: hidden;
+    overflow-y: auto;
     white-space: wrap;
     padding-left: 10px;
     
