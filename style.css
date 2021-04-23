@@ -14,7 +14,6 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 body .head{
     position: relative;
@@ -55,15 +54,20 @@ body #showmsg > .left{
     display: flex;
     align-items: center;
     position: relative;
-    left: 10px;
-    top: 65%;
+    /* left: 10px;
+    top: 65%; */
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 body #showmsg > figure img{
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 15px;
+    margin-top: 15px;
     border: 2px solid gray;
 }
 body #showmsg > figure > p{
@@ -75,8 +79,14 @@ body #showmsg > .right{
     display: flex;
     align-items: center;
     position: relative;
-    left: 180px;
-    top: 85%;
+    left: 90px;
+    /*top: 85%; */
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
 }
 body #showmsg > figure img{
     width: 30px;
