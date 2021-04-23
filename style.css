@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@1&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -14,33 +16,100 @@ body{
     align-items: center;
 
 }
+body .head{
+    position: relative;
+    top: 0px;
+    width: 300px;
+    height: 50px;
+    background: rgba(0,0,0,0.6);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+
+}
+body .head figure> img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 2px solid gray;
+}
+body .head h1{
+    font-size: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: white;
+    font-family: 'Ubuntu Mono', monospace;
+}
 body #showmsg{
     width: 300px;
-    height: 500px;
+    height: 460px;
     background: rgba(0,0,0,0.4);
-    border-radius: 5%;
     overflow-y: auto;
     white-space: wrap;
     padding-left: 10px;
-    padding-bottom: 45px;
+    
+}
+body #showmsg > .left{
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 10px;
+    top: 65%;
+}
+body #showmsg > figure img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 2px solid gray;
+}
+body #showmsg > figure > p{
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+body #showmsg > .right{
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 180px;
+    top: 85%;
+}
+body #showmsg > figure img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 2px solid gray;
+}
+body #showmsg > figure > p{
+    padding-top: 5px;
+    padding-left: 10px;
 }
 body  #msg{
     position: relative;
-    top: -40px;
+    top: 0px;
     width: 300px;
     height: 40px;
     background: rgba(0,0,0,0.6);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding-left: 8px;
+    padding-top: 12px;
+    padding-right: 87px;
     color: white;
     border: none;
     outline: none;
+    resize: none;
 }
 body #btn{
     position: relative;
-    top: -75px;
-    left: 12%;
+    top: -35px;
+    left: 6%;
     width: 70px;
     height: 30px;
     border-radius: 50px;
@@ -83,9 +152,42 @@ body #showmsg p{
 }
 
 
+
+@media (max-width: 1400px) {
+    body  #msg{
+        padding-right: 90px;
+
+    }
+    body #btn{
+        left: 8%;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    body  #msg{
+        padding-right: 100px;
+
+    }
+    body #btn{
+        left: 8%;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    body #btn{
+        left: 10%;
+    }
+
+}
 @media (max-width: 400px) {
+    body  #msg{
+        padding-right: 90px;
+
+    }
     body #btn{
         left: 25%;
-    }
+    
 
 }
