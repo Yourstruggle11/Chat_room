@@ -10,7 +10,15 @@
 </head>
 
 <body>
+  <div class="login_page">
 
+      <div class="card">
+        <label for="user">Please Provide Your Passcode</label>
+        <input type="text" name="user" id="user_input">
+        <button class="checking_btn" onclick="user_access()">Login</button>
+      </div>
+  </div>
+  
 
 
   <div class="head">
@@ -31,7 +39,10 @@
   <textarea id="msg" rows="5" placeholder="Type Text Here..."></textarea>
   <button id="btn" onclick="writeUserData()">Send</button>
 
-  <!-- <button id="del">delete message</button> -->
+  <!-- <button id="del">delete message</button>
+
+  <textarea type="text" id="passcode"> </textarea>
+  <input type="button" value="save" onclick="passcode()"> -->
 
 
 
@@ -63,9 +74,8 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
   </script>
-  <!-- link to make text are auto resize -->
-  <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
 
+  <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
   <!-- external js -->
   <script src="chat_room_code.js"></script>
 </body>
