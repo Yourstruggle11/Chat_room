@@ -46,6 +46,7 @@ body #showmsg{
     height: 460px;
     background: rgba(0,0,0,0.4);
     overflow-y: auto;
+    overflow-x: hidden;
     white-space: wrap;
     padding-left: 10px;
     
@@ -109,6 +110,16 @@ body #showmsg > .right > p{
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+body #showmsg > .right > p .delBtn{
+    position: relative;
+    background: linear-gradient(120deg, #0b648f, #e21737);
+    color: white;
+    width: 50px;
+    top: -3px;
+    left: 10px;
+    border-radius: 10px;
+    border: none;
 }
 body #showmsg .timeParaLeft{
     font-size: 10px;
