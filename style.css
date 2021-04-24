@@ -131,7 +131,7 @@ body #showmsg > .right > p{
     content: "";
     /*width: 20px;
     height: 20px;*/
-    background: linear-gradient(120deg, #4cc2c4, #f54785);
+   /* background: linear-gradient(120deg, #4cc2c4, #f54785);
     position: absolute;
     top: 22px;
     left: 143px;
