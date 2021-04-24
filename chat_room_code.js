@@ -138,9 +138,9 @@ document.addEventListener("keypress", function (e) {
     var messageId = self.getAttribute("data-id");
     database.ref("messages").child(messageId).remove();
   }*/
-document.getElementById("del").addEventListener("click", function () {
+/*document.getElementById("del").addEventListener("click", function () {
   database.ref('messages/').remove()
-})
+})*/
 
 firebase.database().ref("messages/").on("child_removed", function (snapshot) {
   document.getElementById(`m-${snapshot.key}`).innerHTML = "This message has been deleted";
