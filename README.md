@@ -1,5 +1,5 @@
 # Chat_room
-### hello guys i m uploading the beta version of my chatroom app,
+### hello guys now full version of this chatroom app is out,
 ## keep it in mind the app is not fully developed yet.
 
 # feel free to give new ideas.
