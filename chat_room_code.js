@@ -2,8 +2,8 @@ var database = firebase.database();
 
 console.log(database);
 
-//
 autosize(document.getElementById("msg"));
+autosize(document.getElementById("passcode"));
 
 
 //write data to data base
@@ -50,16 +50,16 @@ database.ref('messages').on('child_added', (snapshot) => {
     document.getElementById('showmsg').appendChild(figure)
     figure.appendChild(x)
     //set msg time
-      let time = new Date();
-      let hrs = time.getHours();
-      let min = time.getMinutes();
-      //console.log(`${hrs}${min}`)
-      var pForTime = document.createElement("p");
-      var messageTime = document.createTextNode(`${hrs}:${min}`)
-      pForTime.appendChild(messageTime);
-      pForTime.setAttribute("class", "timeParaRight")
-      document.getElementById('showmsg').appendChild(pForTime);
-      //
+    let time = new Date();
+    let hrs = time.getHours();
+    let min = time.getMinutes();
+    //console.log(`${hrs}${min}`)
+    var pForTime = document.createElement("p");
+    var messageTime = document.createTextNode(`${hrs}:${min}`)
+    pForTime.appendChild(messageTime);
+    pForTime.setAttribute("class", "timeParaRight")
+    document.getElementById('showmsg').appendChild(pForTime);
+    //
 
     // document.getElementById('showmsg').appendChild(x);
 
@@ -73,7 +73,7 @@ database.ref('messages').on('child_added', (snapshot) => {
 
     document.getElementById(`message-${snapshot.key}`).innerHTML = "del";
 
-   
+
   }
   else {
     var figure = document.createElement("figure");
@@ -91,16 +91,16 @@ database.ref('messages').on('child_added', (snapshot) => {
     document.getElementById('showmsg').appendChild(figure)
     figure.appendChild(x)
     //set msg time
-      let time = new Date();
-      let hrs = time.getHours();
-      let min = time.getMinutes();
-     // console.log(`${hrs}${min}`)
-      var pForTime = document.createElement("p");
-      var messageTime = document.createTextNode(`${hrs}:${min}`)
-      pForTime.appendChild(messageTime);
-      pForTime.setAttribute("class", "timeParaLeft")
-      document.getElementById('showmsg').appendChild(pForTime);
-      //
+    let time = new Date();
+    let hrs = time.getHours();
+    let min = time.getMinutes();
+    // console.log(`${hrs}${min}`)
+    var pForTime = document.createElement("p");
+    var messageTime = document.createTextNode(`${hrs}:${min}`)
+    pForTime.appendChild(messageTime);
+    pForTime.setAttribute("class", "timeParaLeft")
+    document.getElementById('showmsg').appendChild(pForTime);
+    //
     // document.getElementById('showmsg').appendChild(x);
   }
   //document.querySelectorAll(".delBtn").innerText = "Del";
@@ -151,10 +151,48 @@ firebase.database().ref("messages/").on("child_removed", function (snapshot) {
 
 
 
- //create a function to del the msg
+//create a function to del the msg
 
- function deleteMsg(self){
+function deleteMsg(self) {
   var messageId = self.getAttribute("data-id");
   console.log(messageId);
   database.ref('messages/').child(messageId).remove()
+}
+
+
+
+//this section is for admin to set access code
+
+function passcode() {
+  let passcode = document.getElementById("passcode").value;
+
+
+  database.ref("userpasscode/").set({
+    password: passcode
+  })
+
+
+}
+
+//make a authentication
+function user_access() {
+  var user_input = document.getElementById("user_input").value;
+
+  database.ref('userpasscode/').on('child_added', (snapshot) => {
+    let userCode = snapshot.val();
+
+    console.log(userCode);
+
+      if (user_input == userCode) {
+        document.querySelector(".login_page").style.display = "none";
+      }
+       else if(user_input == ""){
+        alert("Please Enter A Passcode")
+       }
+      else{
+        alert("You Have Enter A Wrong Passcode")
+      }
+
+  })
+
 }
