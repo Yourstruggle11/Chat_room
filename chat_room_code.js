@@ -2,6 +2,9 @@ var database = firebase.database();
 
 console.log(database);
 
+//
+autosize(document.getElementById("msg"));
+
 
 //write data to data base
 let Name = prompt("Please enter your name", "")
